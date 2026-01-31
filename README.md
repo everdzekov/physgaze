@@ -4,23 +4,38 @@
 
 PhysGaze is a novel deep learning framework for gaze estimation that incorporates anatomical constraints and physics-based regularization to ensure physiologically plausible predictions. 
 This implementation combines a ResNet-18 backbone with an Anatomical Constraint Module (ACM) and a Differentiable Renderer for cycle-consistency.
+
 Key Features:
+
 •	Anatomical Constraint Module (ACM): Ensures predictions stay within biomechanical limits (±55° yaw, ±40° pitch)
+
 •	Differentiable Renderer: Enables cycle-consistency for geometric coherence
+
 •	Multi-Loss Optimization: Combines regression, cycle-consistency, and constraint losses
+
 •	Comprehensive Evaluation: Extensive metrics and visualizations for analysis
+
 
 📊 Model Architecture
 
 PhysGaze = ResNet-18 Backbone + Anatomical Constraint Module + Differentiable Renderer
+
 Components:
+
 1.	ResNetBackbone: Modified ResNet-18 for single-channel eye images
-2.	AnatomicalConstraintModule (ACM): Projects predictions onto feasible eye rotation manifold
-3.	DifferentiableRenderer: Renders synthetic eye images from gaze predictions
-4.	PhysGazeLoss: Combined loss with three components:
+   
+3.	AnatomicalConstraintModule (ACM): Projects predictions onto feasible eye rotation manifold
+   
+5.	DifferentiableRenderer: Renders synthetic eye images from gaze predictions
+   
+7.	PhysGazeLoss: Combined loss with three components:
+   
 o	Regression loss (L1)
+
 o	Cycle-consistency loss
+
 o	ACM regularization loss
+
 
 📁 Project Structure
 

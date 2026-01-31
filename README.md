@@ -26,15 +26,24 @@ o	ACM regularization loss
 
 physgaze/
 ├── data/                          # Dataset directory
+
 │   ├── MPIIGaze/                  # MPIIGaze dataset (auto-downloaded)
+
 │   │   └── Data/Normalized/      # Normalized eye images
+
 │   └── processed_{split}.pt      # Cached processed datasets
+
 ├── logs/                          # Training logs and checkpoints
+
 │   └── physgaze/
 │       ├── best_model.pt         # Best model checkpoint
+
 │       └── results.png           # Evaluation visualizations
+
 ├── physgaze.py                   # Main implementation file
+
 ├── requirements.txt              # Dependencies
+
 └── README.md                     # This file
 
 🚀 Quick Start

@@ -81,60 +81,98 @@ learning_rate = 1e-4        # Learning rate
 
 pretrained_backbone = False # Use pretrained ResNet weights
 use_acm = True             # Enable Anatomical Constraint Module
+
 use_renderer = True        # Enable Differentiable Renderer
+
 image_size = (36, 60)      # Input image size (H, W)
+
 
 # Loss weights
 
 lambda_reg = 1.0           # Regression loss weight
-lambda_cycle = 0.2         # Cycle-consistency loss weight  
+
+lambda_cycle = 0.2         # Cycle-consistency loss weight 
+
 lambda_acm = 0.1           # ACM regularization weight
+
 Dataset Configuration
 The MPIIGaze dataset is automatically downloaded to ./data/MPIIGaze/. The default splits are:
+
 •	Train: Subjects 0-11 (12 subjects)
+
 •	Validation: Subjects 12-13 (2 subjects)
+
 •	Test: Subject 14 (1 subject)
 
 📈 Training and Evaluation
 
 Training Process
 The training pipeline includes:
+
 •	Automatic dataset download and preprocessing
+
 •	Model initialization with proper weight loading
+
 •	Cosine annealing learning rate scheduling
+
 •	Gradient clipping for stability
+
 •	TensorBoard logging for monitoring
+
 •	Checkpoint saving for best model
+
 Evaluation Metrics
+
 The framework calculates:
+
 •	Mean Angular Error (MAE): Primary accuracy metric
+
 •	Yaw/Pitch MAE: Component-wise errors
+
 •	Error Distribution: Statistics (std, median, 95th percentile)
+
 •	Outlier Rate: Predictions outside anatomical limits
+
 •	Extreme Pose MAE: Performance on extreme gaze angles
 
 📊 Visualization
 
 The framework generates 6 comprehensive visualizations:
+
 1.	Predictions vs Ground Truth: Scatter plot with identity line
-2.	Error Distribution: Histogram with mean and median
-3.	Gaze Distribution: 2D plot with anatomical constraint boundaries
-4.	Error vs Gaze Angle: Bar chart showing error by gaze magnitude
-5.	Error Heatmap: 2D heatmap of errors across gaze space
-6.	Cumulative Error: Cumulative distribution function of errors
+   
+3.	Error Distribution: Histogram with mean and median
+   
+5.	Gaze Distribution: 2D plot with anatomical constraint boundaries
+   
+7.	Error vs Gaze Angle: Bar chart showing error by gaze magnitude
+   
+9.	Error Heatmap: 2D heatmap of errors across gaze space
+    
+11.	Cumulative Error: Cumulative distribution function of errors
+    
 ACM Visualization
+
 The Anatomical Constraint Module effect is visualized showing:
+
 •	Raw predictions before ACM (with outliers)
+
 •	Corrected predictions after ACM (reduced outliers)
+
 •	Correction vectors showing ACM adjustments
+
 
 🧪 Using the Model
 
 Inference
 # Load trained model
+
 checkpoint = torch.load('./logs/physgaze/best_model.pt')
+
 model.load_state_dict(checkpoint['model_state_dict'])
+
 model.eval()
+
 
 # Make predictions
 

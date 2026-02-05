@@ -1,0 +1,20 @@
+# Gaze360-specific configuration
+
+# Extends base config
+_base_: "base.yaml"
+
+# Dataset settings
+dataset:
+  name: "gaze360"
+  root_dir: "./data/Gaze360"
+  
+# Model adjustments for full-sphere gaze
+model:
+  yaw_max: 180.0
+  pitch_max: 90.0
+
+# Training adjustments for Gaze360
+training:
+  batch_size: 32
+  learning_rate: 5e-5
+  epochs: 150

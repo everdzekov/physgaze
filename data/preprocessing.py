@@ -1,5 +1,5 @@
 import numpy as np
-from typing import Tuple, List
+from typing import Tuple, List, Dict
 import torch
 
 
@@ -97,4 +97,5 @@ class SyntheticMPIIGaze:
             gaze[0] = gaze[0] / self.yaw_max
             gaze[1] = gaze[1] / self.pitch_max
         
+
         return image, gaze

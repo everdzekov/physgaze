@@ -1,5 +1,5 @@
 import numpy as np
-from typing import Tuple, List, Dict
+from typing import Tuple, List, dict
 import torch
 
 
@@ -25,7 +25,7 @@ class SyntheticMPIIGaze:
         
         self.samples = self._generate_samples()
     
-    def _generate_samples(self) -> List[Dict]:
+    def _generate_samples(self) -> List[dict]:
         samples = []
         
         for _ in range(self.num_samples):
@@ -99,3 +99,4 @@ class SyntheticMPIIGaze:
         
 
         return image, gaze
+

@@ -1,0 +1,23 @@
+# MPIIGaze Configuration
+data:
+  base_dir: './data/MPIIGaze/MPIIGaze'
+  test_subject: 'p14'
+  samples_per_subject: 200
+  filter_extreme_gaze: true
+  image_size: [36, 60]
+
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 1e-3
+  val_split: 0.1
+
+model:
+  name: 'SimpleGazeNet'
+  input_channels: 1
+  output_dim: 2
+
+paths:
+  checkpoints: './checkpoints'
+  outputs: './outputs'
+  logs: './outputs/logs'

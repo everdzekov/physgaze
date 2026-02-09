@@ -1,0 +1,49 @@
+# Default Configuration for PhysGaze
+project:
+  name: 'PhysGaze'
+  version: '1.0.0'
+
+data:
+  dataset: 'MPIIGaze'
+  base_dir: './data'
+  batch_size: 32
+  num_workers: 4
+  pin_memory: true
+
+model:
+  architecture: 'SimpleGazeNet'
+  pretrained: false
+  freeze_backbone: false
+
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  gradient_clip: 1.0
+  save_frequency: 10
+
+optimizer:
+  type: 'Adam'
+  betas: [0.9, 0.999]
+  eps: 1e-8
+
+scheduler:
+  type: 'ReduceLROnPlateau'
+  patience: 10
+  factor: 0.5
+  min_lr: 1e-6
+
+loss:
+  gaze_loss_weight: 1.0
+  consistency_loss_weight: 0.1
+
+evaluation:
+  metrics: ['MAE', 'AngularError']
+  save_predictions: true
+  visualize_results: true
+
+logging:
+  wandb: false
+  wandb_project: 'physgaze'
+  tensorboard: true
+  log_frequency: 10

@@ -48,7 +48,7 @@ This implementation extends the original PhysGaze paper with enhanced features i
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/PhysGaze.git
+git clone https://github.com/everdzekov/PhysGaze.git
 cd PhysGaze
 
 # Install dependencies

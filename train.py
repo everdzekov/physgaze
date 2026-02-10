@@ -19,9 +19,12 @@ from data.datasets import GazeDataset
 from models.physgaze import PhysGaze
 from training.trainer import EnhancedPhysGazeTrainer
 from utils.helpers import set_seed, get_device, create_directory
-from configs.default import get_config
+from configs import get_config  # FIXED: import from configs, not configs.default
 
 def parse_args():
+    parser = argparse.ArgumentParser(description='Train PhysGaze model')
+    parser.add_argument('--config', type=str, default='configs/default.yaml',
+                       help='Path to config file')
     parser = argparse.ArgumentParser(description='Train PhysGaze model')
     parser.add_argument('--config', type=str, default='configs/default.yaml',
                        help='Path to config file')

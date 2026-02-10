@@ -650,7 +650,7 @@ This project builds upon the work of many researchers and open-source contributo
 - **💬 Discussions**: [GitHub Discussions](https://github.com/everdzekov/PhysGaze/discussions)
 
 ### Project Lead
-- **Name**: Your Name
+- **Name**: VERDZEKOV EMILE TATINYUY
 - **Email**: verdzekov.emile@uniba.cm
 - **Phone**: +237 652 47 61 60
 - **GitHub**: [@everdzekov](https://github.com/everdzekov)

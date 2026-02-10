@@ -14,12 +14,12 @@ import numpy as np
 # Add project root to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from data.loaders import MPIIGazeLoader, Gaze360Loader
-from data.datasets import GazeDataset
-from models.physgaze import PhysGaze
-from training.trainer import EnhancedPhysGazeTrainer
-from utils.helpers import set_seed, get_device, create_directory
-from configs import get_config  # FIXED: import from configs, not configs.default
+from ./PhysGaze/data.loaders import MPIIGazeLoader, Gaze360Loader
+from ./PhysGaze/data.datasets import GazeDataset
+from ./PhysGaze/models.physgaze import PhysGaze
+from ./PhysGaze/training.trainer import EnhancedPhysGazeTrainer
+from ./PhysGaze/utils.helpers import set_seed, get_device, create_directory
+from ./PhysGaze/configs import get_config  # FIXED: import from configs, not configs.default
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train PhysGaze model')

@@ -54,9 +54,9 @@ cd PhysGaze
 # Install dependencies
 pip install -r requirements.txt
 
-# Or use the setup script
-chmod +x setup.sh
-./setup.sh
+# Run this model either
+python train.py //if this fails use this
+python physgaze_exellent.py
 ```
 
 ### Detailed Installation
